@@ -1,0 +1,119 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fa;
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:#fff !important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+/* Background */
+
+.restaurant-section{
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+    min-height:92vh;
+}
+
+.overlay{
+    background:rgba(0,0,0,.60);
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    padding:50px 0;
+}
+
+/* Card */
+
+.restaurant-card{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.20);
+}
+
+.restaurant-card h2{
+    text-align:center;
+    font-weight:700;
+    color:#222;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* Form */
+
+label{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.input-group-text{
+    background:#ff6b00;
+    color:#fff;
+    border:none;
+}
+
+.form-control,
+textarea{
+    border-radius:10px;
+}
+
+.form-control:focus,
+textarea:focus{
+    border-color:#ff6b00;
+    box-shadow:0 0 0 .2rem rgba(255,107,0,.15);
+}
+
+/* Button */
+
+.add-btn{
+    background:#ff6b00;
+    color:#fff;
+    font-weight:600;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#e65d00;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.restaurant-card{
+    padding:25px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+}

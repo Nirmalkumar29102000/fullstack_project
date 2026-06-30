@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fa;
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:#fff!important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+/* Hero */
+
+.hero{
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+    height:280px;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:48px;
+    font-weight:700;
+}
+
+.hero p{
+    color:#eee;
+    font-size:18px;
+}
+
+/* Card */
+
+.cart-card{
+    background:#fff;
+    margin-top:-70px;
+    border-radius:20px;
+    padding:35px;
+    position:relative;
+    z-index:10;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.cart-card h3{
+    font-weight:700;
+}
+
+/* Table */
+
+.table thead{
+    background:#111;
+    color:#fff;
+}
+
+.table thead th{
+    padding:18px;
+}
+
+.table tbody td{
+    padding:18px;
+    vertical-align:middle;
+}
+
+.table tbody tr{
+    transition:.3s;
+}
+
+.table tbody tr:hover{
+    background:#fff6f1;
+}
+
+/* Food Image */
+
+.food-img{
+    width:90px;
+    height:90px;
+    object-fit:cover;
+    border-radius:12px;
+    border:3px solid #ff6b00;
+}
+
+/* Summary */
+
+.summary{
+    margin-top:35px;
+    padding:25px;
+    border-radius:15px;
+    background:#fff5ef;
+    border:2px solid #ff6b00;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.summary h4{
+    color:#666;
+}
+
+.summary h2{
+    color:#ff6b00;
+    font-weight:700;
+}
+
+/* Button */
+
+.payment-btn{
+    background:#ff6b00;
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    padding:14px 28px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.payment-btn:hover{
+    background:#e65d00;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero{
+    height:220px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.cart-card{
+    margin-top:-50px;
+    padding:20px;
+}
+
+.food-img{
+    width:70px;
+    height:70px;
+}
+
+.summary{
+    text-align:center;
+    justify-content:center;
+    gap:20px;
+}
+
+.payment-btn{
+    width:100%;
+}
+
+}

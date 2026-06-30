@@ -1,0 +1,123 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f7fa;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:#fff !important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("../images/biryaniland1.jpg") center/cover;
+    color:#fff;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:700;
+}
+
+.hero p{
+    font-size:18px;
+    margin-top:15px;
+}
+
+/* Dashboard */
+
+.dashboard-card{
+    background:#fff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.dashboard-card h3{
+    font-weight:700;
+}
+
+/* Table */
+
+.table{
+    margin-bottom:0;
+}
+
+.table thead{
+    background:#111;
+    color:#fff;
+}
+
+.table thead th{
+    padding:18px;
+}
+
+.table tbody td{
+    padding:18px;
+    vertical-align:middle;
+}
+
+.table tbody tr{
+    transition:.3s;
+}
+
+.table tbody tr:hover{
+    background:#fff6f1;
+}
+
+/* Button */
+
+.btn-success{
+    background:#ff6b00;
+    border:none;
+    border-radius:30px;
+    padding:8px 20px;
+    font-weight:600;
+}
+
+.btn-success:hover{
+    background:#e65d00;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:34px;
+}
+
+.dashboard-card{
+    padding:20px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.table{
+    font-size:14px;
+}
+
+}

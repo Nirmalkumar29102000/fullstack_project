@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fa;
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:#fff!important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+/* Hero */
+
+.hero{
+    height:280px;
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:48px;
+    font-weight:700;
+}
+
+.hero p{
+    color:#f1f1f1;
+    font-size:18px;
+}
+
+/* Food Card */
+
+.food-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    transition:.35s;
+    height:100%;
+}
+
+.food-card:hover{
+    transform:translateY(-10px);
+}
+
+.food-image{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.food-body{
+    padding:22px;
+}
+
+.food-body h4{
+    font-weight:700;
+}
+
+.food-body p{
+    color:#666;
+    min-height:55px;
+}
+
+.price{
+    color:#ff6b00;
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.quantity-box{
+    border-radius:10px;
+}
+
+.add-cart-btn{
+    background:#ff6b00;
+    color:#fff;
+    border:none;
+    border-radius:30px;
+    padding:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.add-cart-btn:hover{
+    background:#e65d00;
+    color:#fff;
+}
+
+.empty-box{
+    background:#fff;
+    border-radius:20px;
+    padding:60px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+@media(max-width:768px){
+
+.hero{
+    height:220px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.food-image{
+    height:220px;
+}
+
+}

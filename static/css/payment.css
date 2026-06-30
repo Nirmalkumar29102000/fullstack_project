@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fa;
+}
+
+/* Navbar */
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:#fff!important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+/* Background */
+
+.payment-section{
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+    min-height:92vh;
+}
+
+.overlay{
+    min-height:92vh;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+}
+
+/* Card */
+
+.payment-card{
+    background:#fff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.payment-card h2{
+    text-align:center;
+    font-weight:700;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* Amount */
+
+.amount-box{
+    background:#fff5ef;
+    border:2px solid #ff6b00;
+    border-radius:15px;
+    text-align:center;
+    padding:20px;
+    margin-bottom:30px;
+}
+
+.amount-box h5{
+    color:#666;
+}
+
+.amount-box h1{
+    color:#ff6b00;
+    font-size:45px;
+    font-weight:700;
+}
+
+/* Form */
+
+.form-label{
+    font-weight:600;
+}
+
+.form-select{
+    border-radius:10px;
+    padding:12px;
+}
+
+.form-select:focus{
+    border-color:#ff6b00;
+    box-shadow:0 0 0 .2rem rgba(255,107,0,.15);
+}
+
+/* Button */
+
+.payment-btn{
+    background:#ff6b00;
+    color:#fff;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.payment-btn:hover{
+    background:#e65d00;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.payment-card{
+    padding:25px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+.amount-box h1{
+    font-size:34px;
+}
+
+}

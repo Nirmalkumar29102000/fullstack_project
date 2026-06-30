@@ -1,0 +1,564 @@
+/* ==========================
+   GLOBAL
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f5f7fa;
+    color:#333;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.custom-navbar{
+    background:#111;
+    padding:14px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:#fff !important;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+.navbar-nav .nav-link{
+    color:#fff !important;
+    font-size:17px;
+    margin-left:18px;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover{
+    color:#ff6b00 !important;
+}
+
+.navbar-nav .btn-warning{
+    background:#ff6b00;
+    border:none;
+    color:#fff;
+    font-weight:600;
+    border-radius:30px;
+    padding:8px 18px;
+    transition:.3s;
+}
+
+.navbar-nav .btn-warning:hover{
+    background:#e85d00;
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+
+.hero{
+    height:380px;
+    background:url("../images/biryaniland1.jpg")
+    center center/cover no-repeat;
+    position:relative;
+}
+
+.overlay{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.60);
+    display:flex;
+    align-items:center;
+}
+
+.hero h1{
+    color:#fff;
+    font-size:52px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#eee;
+    font-size:19px;
+    max-width:600px;
+    line-height:1.8;
+}
+
+/* ==========================
+   SEARCH BAR
+========================== */
+
+.search-box{
+    background:#fff;
+    border-radius:50px;
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+    display:flex;
+    align-items:center;
+    padding:14px 25px;
+    margin-top:-45px;
+    position:relative;
+    z-index:100;
+}
+
+.search-box i{
+    color:#ff6b00;
+    font-size:22px;
+    margin-right:15px;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:17px;
+    background:transparent;
+}
+
+/* ==========================
+   SECTION TITLE
+========================== */
+
+.section-title{
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:35px;
+    color:#222;
+}
+
+/* ==========================
+   RESTAURANT CARDS
+========================== */
+
+.restaurant-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+    height:100%;
+}
+
+.restaurant-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.image-box{
+    position:relative;
+    overflow:hidden;
+    height:240px;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.restaurant-card:hover .image-box img{
+    transform:scale(1.08);
+}
+
+/* Rating Badge */
+
+.rating{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#28a745;
+    color:#fff;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* Card Body */
+
+.restaurant-body{
+    padding:22px;
+}
+
+.restaurant-body h4{
+    font-size:24px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:15px;
+}
+
+.restaurant-body p{
+    color:#666;
+    margin-bottom:10px;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+}
+
+.restaurant-body i{
+    color:#ff6b00;
+    margin-right:8px;
+    font-size:18px;
+}
+
+/* Footer */
+
+.card-footer-custom{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card-footer-custom span{
+    color:#28a745;
+    font-weight:600;
+}
+
+/* View Menu Button */
+
+.menu-btn{
+    background:#ff6b00;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    background:#e85d00;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* Empty Alert */
+
+.alert-warning{
+    border-radius:15px;
+    padding:20px;
+    font-size:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Card Animation */
+
+.restaurant-card{
+    animation:fadeUp .7s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================
+   PROFILE MODAL
+========================== */
+
+.profile-card{
+    border-radius:20px;
+    overflow:hidden;
+    border:none;
+}
+
+.profile-card .modal-header{
+    background:#111;
+    color:#fff;
+    padding:20px 25px;
+}
+
+.profile-card .modal-header h3{
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+}
+
+.profile-image{
+    margin-bottom:20px;
+}
+
+.profile-image img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:5px solid #ff6b00;
+    object-fit:cover;
+}
+
+.profile-info{
+    margin-top:20px;
+}
+
+.profile-info div{
+    display:flex;
+    align-items:center;
+    margin-bottom:18px;
+    font-size:16px;
+}
+
+.profile-info i{
+    width:35px;
+    font-size:20px;
+    color:#ff6b00;
+}
+
+.profile-card .btn{
+    border-radius:30px;
+    padding:10px 22px;
+    font-weight:600;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#111;
+    color:#fff;
+    margin-top:80px;
+    padding:60px 0 20px;
+}
+
+footer h3{
+    font-size:30px;
+    font-weight:700;
+}
+
+footer h3 span{
+    color:#ff6b00;
+}
+
+footer h5{
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+footer p{
+    color:#ddd;
+    line-height:1.8;
+}
+
+footer ul{
+    list-style:none;
+    padding:0;
+}
+
+footer ul li{
+    margin-bottom:12px;
+    color:#ddd;
+    transition:.3s;
+    cursor:pointer;
+}
+
+footer ul li:hover{
+    color:#ff6b00;
+    padding-left:8px;
+}
+
+footer hr{
+    border-color:#444;
+    margin:35px 0 20px;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f1f1f1;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff6b00;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#e85d00;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media(max-width:991px){
+
+.hero{
+    height:320px;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+.search-box{
+    margin-top:-35px;
+}
+
+}
+
+@media(max-width:768px){
+
+.logo{
+    font-size:24px;
+}
+
+.hero{
+    height:280px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:15px;
+}
+
+.search-box{
+    padding:12px 18px;
+}
+
+.restaurant-body h4{
+    font-size:21px;
+}
+
+.card-footer-custom{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.menu-btn{
+    width:100%;
+    text-align:center;
+}
+
+.profile-card .modal-footer{
+    flex-direction:column;
+    gap:10px;
+}
+
+.profile-card .modal-footer .btn{
+    width:100%;
+}
+
+footer{
+    text-align:center;
+}
+
+footer h5{
+    margin-top:25px;
+}
+
+}
+
+@media(max-width:576px){
+
+.hero{
+    height:250px;
+    width: 800px;
+}
+
+.hero h1{
+    font-size:26px;
+}
+
+.hero p{
+    font-size:14px;
+}
+
+.search-box{
+    margin-top:-28px;
+    width: 800px;
+}
+
+.section-title{
+    font-size:24px;
+}
+
+}
+
+.welcome-card{
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35, #ff914d);
+    color: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    margin: 25px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+.welcome-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.welcome-card h2{
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.welcome-card h2 span{
+    color: #ffe600;
+}
+
+.welcome-card p{
+    margin-top: 10px;
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+@media (max-width:768px){
+
+    .welcome-card{
+        padding:20px;
+        text-align:center;
+    }
+
+    .welcome-card h2{
+        font-size:24px;
+    }
+
+    .welcome-card p{
+        font-size:14px;
+    }
+}

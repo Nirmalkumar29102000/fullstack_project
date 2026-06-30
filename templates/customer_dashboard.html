@@ -1,0 +1,498 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery | Restaurants</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/customer_dashboard.css' %}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="{% url 'base' %}">
+Food<span>Delivery</span>
+</a>
+
+<button class="navbar-toggler"
+data-bs-toggle="collapse"
+data-bs-target="#navbar">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse justify-content-end"
+id="navbar">
+
+<ul class="navbar-nav align-items-center">
+
+<li class="nav-item">
+
+<a class="nav-link active">
+
+<i class="bi bi-house-fill"></i>
+
+Restaurants
+
+</a>
+
+</li>
+
+<li class="nav-item ms-3">
+
+<a class="btn btn-warning"
+
+data-bs-toggle="modal"
+
+data-bs-target="#profileModal">
+
+<i class="bi bi-person-circle"></i>
+
+{{ customer.username }}
+
+</a>
+
+</li>
+
+<li class="nav-item ms-3">
+
+<a href="{% url 'logout' %}" class="btn btn-danger">
+    Logout
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<div class="overlay">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-7">
+
+<h1>
+
+Delicious Food Delivered To Your Door 🍔
+
+</h1>
+
+<p>
+
+Discover the best restaurants around you and enjoy
+fast delivery with fresh meals.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="container mt-4">
+    <div class="card welcome-card border-0">
+        <div class="card-body">
+            <h3 class="welcome-title">
+                👋 Welcome, <span>{{ customer.username }}</span>!
+            </h3>
+            <p class="welcome-text">
+                Discover your favorite restaurants and enjoy delicious meals.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ================= SEARCH ================= -->
+
+<div class="container mt-5">
+
+<div class="search-box">
+
+<i class="bi bi-search"></i>
+
+<input
+type="text"
+id="searchRestaurant"
+placeholder="Search Restaurants...">
+
+</div>
+
+</div>
+
+<!-- ================= RESTAURANTS ================= -->
+
+<div class="container mt-5">
+
+<h2 class="section-title">
+
+Popular Restaurants
+
+</h2>
+
+<div class="row">
+
+{% for restaurant in restaurants %}
+
+<div class="col-lg-4 col-md-6 mb-2">
+
+<div class="restaurant-card">
+
+<div class="image-box">
+
+<img
+src="{{ restaurant.image.url }}"
+class="img-fluid">
+
+<div class="rating">
+
+⭐ 4.8
+
+</div>
+
+</div>
+
+<div class="restaurant-body">
+
+<h4>
+
+{{ restaurant.restaurant_name }}
+
+</h4>
+
+<p>
+
+<i class="bi bi-geo-alt-fill"></i>
+
+{{ restaurant.address }}
+
+</p>
+
+<p>
+
+<i class="bi bi-telephone-fill"></i>
+
+{{ restaurant.phone_number }}
+
+</p>
+
+<div class="card-footer-custom">
+
+<span>
+
+🚚 25-30 mins
+
+</span>
+
+<a href="{% url 'view_menu' restaurant.id %}"
+
+class="menu-btn">
+
+View Menu
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="col-12">
+
+<div class="alert alert-warning text-center">
+
+No Restaurants Available.
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- ================= PROFILE MODAL ================= -->
+
+<div class="modal fade"
+     id="profileModal"
+     tabindex="-1">
+
+<div class="modal-dialog modal-dialog-centered">
+
+<div class="modal-content profile-card">
+
+<div class="modal-header border-0">
+
+<h3>
+
+<i class="bi bi-person-circle"></i>
+
+My Profile
+
+</h3>
+
+<button
+type="button"
+class="btn-close"
+data-bs-dismiss="modal">
+
+</button>
+
+</div>
+
+<div class="modal-body text-center">
+
+<div class="profile-image">
+
+<img
+src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+</div>
+
+<h3>
+
+{{ customer.username }}
+
+</h3>
+
+<span class="badge bg-warning text-dark">
+
+{{ customer.role|title }}
+
+</span>
+
+<hr>
+
+<div class="profile-info">
+
+<div>
+
+<i class="bi bi-envelope-fill"></i>
+
+<span>
+
+{{ customer.email }}
+
+</span>
+
+</div>
+
+<div>
+
+<i class="bi bi-telephone-fill"></i>
+
+<span>
+
+{{ customer.phone_number }}
+
+</span>
+
+</div>
+
+<div>
+
+<i class="bi bi-person-badge-fill"></i>
+
+<span>
+
+{{ customer.role }}
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="modal-footer border-0 justify-content-between">
+
+<a
+href="{% url 'my_orders' %}"
+class="btn btn-warning">
+
+<i class="bi bi-bag-check-fill"></i>
+
+My Orders
+
+</a>
+
+<a
+href="{% url 'base' %}"
+class="btn btn-danger">
+
+<i class="bi bi-box-arrow-right"></i>
+
+Logout
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-lg-4">
+
+<h3>
+
+Food<span>Delivery</span>
+
+</h3>
+
+<p>
+
+Delivering happiness with delicious meals
+from the best restaurants.
+
+</p>
+
+</div>
+
+<div class="col-lg-4">
+
+<h5>
+
+Quick Links
+
+</h5>
+
+<ul>
+
+<li>Home</li>
+
+<li>Restaurants</li>
+
+<li>Orders</li>
+
+<li>Contact</li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-4">
+
+<h5>
+
+Contact
+
+</h5>
+
+<p>
+
+📧 support@fooddelivery.com
+
+</p>
+
+<p>
+
+📞 +91 9876543210
+
+</p>
+
+<p>
+
+📍 Chennai, Tamil Nadu
+
+</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="text-center">
+
+© 2026 FoodDelivery
+
+All Rights Reserved
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= SEARCH SCRIPT ================= -->
+
+<script>
+
+const search=document.getElementById("searchRestaurant");
+
+search.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+let cards=document.querySelectorAll(".restaurant-card");
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+
+card.parentElement.style.display=text.includes(value)
+?
+"block"
+:
+"none";
+
+});
+
+});
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

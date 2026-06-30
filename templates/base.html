@@ -1,0 +1,388 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Food Delivery{% endblock %}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#f8f9fa;
+}
+
+/* NAVBAR */
+
+.custom-navbar{
+
+    background:#111;
+
+    padding:15px 0;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#fff !important;
+
+}
+
+.logo span{
+
+    color:#ff6b00;
+
+}
+
+.navbar-nav .nav-link{
+
+    color:white;
+
+    font-size:17px;
+
+    margin-left:25px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#ff6b00 !important;
+
+}
+
+/* HERO */
+
+.hero{
+
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+
+    height:550px;
+
+}
+
+.hero-overlay{
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-content{
+
+    color:white;
+
+    max-width:600px;
+
+}
+
+.hero-content h1{
+
+    font-size:55px;
+
+    font-weight:700;
+
+}
+
+.hero-content p{
+
+    margin:25px 0;
+
+    font-size:20px;
+
+}
+
+.btn-warning{
+
+    padding:12px 35px;
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    background:#111;
+
+    color:white;
+
+    padding:60px 0 20px;
+
+}
+
+.footer h4,
+.footer h5{
+
+    margin-bottom:20px;
+
+}
+
+.footer ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.footer ul li{
+
+    margin-bottom:10px;
+
+}
+
+.footer a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:#ff6b00;
+
+}
+
+.footer hr{
+
+    border-color:#555;
+
+    margin:35px 0;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+
+height:420px;
+
+}
+
+.hero-content{
+
+text-align:center;
+
+}
+
+.hero-content h1{
+
+font-size:34px;
+
+}
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+.navbar-nav{
+
+text-align:center;
+
+padding-top:15px;
+
+}
+
+.navbar-nav .nav-link{
+
+margin-left:0;
+
+padding:12px;
+
+}
+
+}
+</style>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Food<span>Delivery</span>
+        </a>
+
+        <button class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+
+            <ul class="navbar-nav">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">
+                        Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <h1>Fresh Food Delivered To Your Door</h1>
+
+                <p>
+                    Order delicious meals from your favourite restaurants in minutes.
+                </p>
+
+                <a href="{% url 'customer_dashboard' %}" class="btn btn-warning btn-lg">
+                    Explore Restaurants
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="row gy-4">
+
+<div class="col-lg-4">
+
+<h4>FoodDelivery</h4>
+
+<p>
+Delivering happiness with delicious meals from the best restaurants in your city.
+</p>
+
+</div>
+
+<div class="col-lg-4">
+
+<h5>Quick Links</h5>
+
+<ul>
+
+<li><a href="#">About</a></li>
+
+<li><a href="#">Privacy Policy</a></li>
+
+<li><a href="#">Terms & Conditions</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-4">
+
+<h5>Contact</h5>
+
+<p>Email : fooddelivery@gmail.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+<p>Chennai, Tamil Nadu</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="text-center">
+
+© 2026 FoodDelivery. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if messages %}
+    {% for message in messages %}
+    <script>
+        Swal.fire({
+            icon: 'warning',
+            title: 'Login Required',
+            text: '{{ message }}',
+            confirmButtonColor: '#ff6b00'
+        });
+    </script>
+    {% endfor %}
+{% endif %}
+</body>
+
+</html>

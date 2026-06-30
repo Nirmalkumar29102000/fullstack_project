@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Restaurant | FoodDelivery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/add_restaurant.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="#">
+Food<span>Delivery</span>
+</a>
+
+<a href="{% url 'owner_dashboard' %}" class="btn btn-warning">
+
+<i class="bi bi-arrow-left"></i>
+
+Back
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- Form -->
+
+<section class="restaurant-section">
+
+<div class="overlay">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-7">
+
+<div class="restaurant-card">
+
+<h2>
+
+<i class="bi bi-shop"></i>
+
+Add Restaurant
+
+</h2>
+
+<p class="subtitle">
+
+Register your restaurant and start receiving customer orders.
+
+</p>
+
+<form method="POST"
+      action="{% url 'add_restaurant' %}"
+      enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="mb-3">
+
+<label>
+
+Restaurant Name
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="bi bi-shop-window"></i>
+
+</span>
+
+<input
+type="text"
+name="restaurant_name"
+class="form-control"
+placeholder="Enter Restaurant Name"
+required>
+
+</div>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Address
+
+</label>
+
+<textarea
+name="address"
+rows="4"
+class="form-control"
+placeholder="Enter Restaurant Address"
+required></textarea>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Phone Number
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="bi bi-telephone-fill"></i>
+
+</span>
+
+<input
+type="text"
+name="phone_number"
+class="form-control"
+placeholder="Enter Phone Number"
+required>
+
+</div>
+
+</div>
+
+<div class="mb-4">
+
+<label>
+
+Restaurant Image
+
+</label>
+
+<input
+type="file"
+name="image"
+class="form-control"
+required>
+
+</div>
+
+<div class="d-grid gap-2">
+
+<button class="btn add-btn">
+
+<i class="bi bi-plus-circle-fill"></i>
+
+Add Restaurant
+
+</button>
+
+<a href="{% url 'owner_dashboard' %}"
+
+class="btn btn-outline-dark">
+
+Cancel
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

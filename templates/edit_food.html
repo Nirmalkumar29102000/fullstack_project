@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Food | FoodDelivery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/edit_food.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="#">
+Food<span>Delivery</span>
+</a>
+
+<a href="{% url 'view_restaurant' %}" class="btn btn-warning">
+
+<i class="bi bi-arrow-left"></i>
+
+Back
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- Edit Food Section -->
+
+<section class="food-section">
+
+<div class="overlay">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-7">
+
+<div class="food-card">
+
+<h2>
+
+<i class="bi bi-pencil-square"></i>
+
+Edit Food
+
+</h2>
+
+<p class="subtitle">
+
+Update your food details below.
+
+</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="mb-3">
+
+<label>Food Name</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="bi bi-egg-fried"></i>
+
+</span>
+
+<input
+type="text"
+name="food_name"
+class="form-control"
+value="{{ food.food_name }}"
+required>
+
+</div>
+
+</div>
+
+<div class="mb-3">
+
+<label>Description</label>
+
+<textarea
+name="description"
+rows="4"
+class="form-control"
+required>{{ food.description }}</textarea>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Price</label>
+
+<div class="input-group">
+
+<span class="input-group-text">₹</span>
+
+<input
+type="number"
+step="0.01"
+name="price"
+class="form-control"
+value="{{ food.price }}"
+required>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Food Image</label>
+
+<input
+type="file"
+name="image"
+class="form-control">
+
+</div>
+
+</div>
+
+{% if food.image %}
+<div class="text-center mb-4">
+
+<img src="{{ food.image.url }}"
+     class="preview-img">
+
+</div>
+{% endif %}
+
+<div class="form-check mb-4">
+
+<input
+class="form-check-input"
+type="checkbox"
+name="is_available"
+{% if food.is_available %}checked{% endif %}>
+
+<label class="form-check-label">
+
+Available
+
+</label>
+
+</div>
+
+<div class="d-grid gap-2">
+
+<button class="btn update-btn">
+
+<i class="bi bi-check-circle-fill"></i>
+
+Update Food
+
+</button>
+
+<a href="{% url 'view_restaurant' %}"
+
+class="btn btn-outline-dark">
+
+Cancel
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

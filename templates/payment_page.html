@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | FoodDelivery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="#">
+Food<span>Delivery</span>
+</a>
+
+<a href="{% url 'view_cart' %}" class="btn btn-warning">
+
+<i class="bi bi-arrow-left"></i>
+
+Back to Cart
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- Payment Section -->
+
+<section class="payment-section">
+
+<div class="overlay">
+
+<div class="container">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-6">
+
+<div class="payment-card">
+
+<h2>
+
+<i class="bi bi-credit-card-fill"></i>
+
+Secure Payment
+
+</h2>
+
+<p class="subtitle">
+
+Complete your payment to place your order.
+
+</p>
+
+<div class="amount-box">
+
+<h5>Total Amount</h5>
+
+<h1>
+
+₹{{ grand_total }}
+
+</h1>
+
+</div>
+
+<form method="POST"
+      action="{% url 'place_order' %}">
+
+{% csrf_token %}
+
+<div class="mb-4">
+
+<label class="form-label">
+
+Payment Method
+
+</label>
+
+<select
+name="payment_method"
+class="form-select">
+
+<option value="Cash On Delivery">
+
+💵 Cash On Delivery
+
+</option>
+
+<option value="UPI">
+
+📱 UPI
+
+</option>
+
+<option value="Card">
+
+💳 Debit / Credit Card
+
+</option>
+
+</select>
+
+</div>
+
+<button class="btn payment-btn w-100">
+
+<i class="bi bi-shield-check"></i>
+
+Confirm Payment
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

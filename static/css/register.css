@@ -1,0 +1,108 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI,sans-serif;
+}
+
+.custom-navbar{
+    background:#111;
+    padding:15px 0;
+}
+
+.logo{
+    color:white !important;
+    font-size:30px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#ff6b00;
+}
+
+.register-section{
+    background:url("../images/biryaniland1.jpg") center center/cover no-repeat;
+    min-height:100vh;
+}
+
+.overlay{
+    min-height:100vh;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    align-items:center;
+    padding:40px 0;
+}
+
+.register-card{
+    background:rgba(255,255,255,.95);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+
+.register-card h2{
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.input-group-text{
+    background:#ff6b00;
+    color:white;
+    border:none;
+}
+
+.form-control,
+.form-select,
+textarea{
+    height:48px;
+}
+
+textarea{
+    height:auto;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus{
+    border-color:#ff6b00;
+    box-shadow:none;
+}
+
+.register-btn{
+    background:#ff6b00;
+    color:white;
+    height:50px;
+    font-weight:700;
+    border:none;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:#e65c00;
+    transform:translateY(-2px);
+}
+
+a{
+    color:#ff6b00;
+    text-decoration:none;
+    font-weight:600;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:768px){
+
+.register-card{
+    padding:25px;
+}
+
+.logo{
+    font-size:24px;
+}
+
+}

@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard | FoodDelivery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/owner_dashboard.css' %}">
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+
+<div class="container">
+
+<a class="navbar-brand logo" href="#">
+Food<span>Delivery</span>
+</a>
+
+<a href="{% url 'logout' %}" class="btn btn-danger">
+    Logout
+</a>
+
+</div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<div class="container text-center">
+
+<h1>
+
+Restaurant Owner Dashboard
+
+</h1>
+
+<p>
+
+Manage your restaurants, menus and customer orders from one place.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Dashboard -->
+
+<div class="container py-5">
+
+<div class="row g-4">
+
+<!-- Card -->
+
+<div class="col-lg-4">
+
+<div class="dashboard-card">
+
+<div class="icon">
+
+🏢
+
+</div>
+
+<h3>
+
+Add Restaurant
+
+</h3>
+
+<p>
+
+Create and manage your restaurant.
+
+</p>
+
+<a href="{% url 'add_restaurant' %}"
+
+class="btn dashboard-btn">
+
+Add Restaurant
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Card -->
+
+<div class="col-lg-4">
+
+<div class="dashboard-card">
+
+<div class="icon">
+
+🍽️
+
+</div>
+
+<h3>
+
+View Restaurants
+
+</h3>
+
+<p>
+
+Manage restaurants and food items.
+
+</p>
+
+<a href="{% url 'view_restaurant' %}"
+
+class="btn dashboard-btn">
+
+View Restaurants
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Card -->
+
+<div class="col-lg-4">
+
+<div class="dashboard-card">
+
+<div class="icon">
+
+📦
+
+</div>
+
+<h3>
+
+Customer Orders
+
+</h3>
+
+<p>
+
+Accept and monitor customer orders.
+
+</p>
+
+<a href="{% url 'owner_orders' %}"
+
+class="btn dashboard-btn">
+
+View Orders
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
