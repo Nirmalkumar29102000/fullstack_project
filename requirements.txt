@@ -5,6 +5,7 @@ Django==6.0.6
 filelock==3.29.4
 gunicorn==26.0.0
 packaging==26.2
+pillow==12.2.0
 platformdirs==4.10.0
 psycopg2-binary==2.9.12
 python-discovery==1.4.2
